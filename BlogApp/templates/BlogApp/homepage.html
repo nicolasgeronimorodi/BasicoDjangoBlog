@@ -1,0 +1,7 @@
+{% extends "BlogApp/layout.html" %}  
+{% block post %} 
+
+{% for posteo in post_list %}
+<p> {{ posteo.contenido }} </p>        
+{% endfor %}
+{% endblock post %} 

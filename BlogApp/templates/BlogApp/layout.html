@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Falopa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <style>
+  header{background-color: #272727; max-height: 600; margin: 0;}
+  #menu-horizontal{padding-left: 5%}
+  #menu-horizontal-ul{list-style: none;}
+  li{display: inline; font-size: 26px ;}
+ 
+
+  </style>
+  </head>
+  <header>
+      {% block encabezado %}
+      <img src="{% static 'BlogApp/placeholder.png' %}"/>
+      {% endblock encabezado %}
+  </header>
+  <body>
+    {% block menu-horizontal %}
+    <div id="menu-horizontal">
+      <ul id="menu-horizontal-ul"> 
+      <li class="{% if request.resolver_match.url_name == "index" %}active{% endif %}"><a href="{% url "index" %}"> índice |</a> </li>
+      <li class="{% if request.resolver_match.url_name == "about" %}active{% endif %}"><a href="{% url "about" %}"> quienes somos |</a> </li>
+      
+      <li class="{% if request.resolver_match.url_name == "formulario_newsletter" %}active{% endif %}"><a href="{% url "formulario" %}"> suscribite |</a> </li> 
+      <li class="{% if request.resolver_match.url_name == "Homepage" %}active{% endif %}"><a href="{% url "homepage" %}"> últimos posts |</a> </li>  
+    </ul>
+
+
+    </div>
+    {% endblock menu-horizontal %}
+  <section class="section">
+</section>
+
+{% block formularionewsletter %}
+{% endblock formularionewsletter %}
+
+{% block post %}     
+{% endblock post %}
+
+</body>
+</html>

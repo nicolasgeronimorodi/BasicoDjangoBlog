@@ -1,0 +1,16 @@
+{% extends "BlogApp/layout.hml" %}
+{% load static %} 
+
+{% block formularionewsletter %} 
+<h1>suscribite</h1>
+<form method="POST">
+    {% csrf_token %}  
+    
+    {{ formulario.as_p }}
+
+
+   
+    
+    <button type="submit" class="btn btn-primary">   Enviar </button>
+</form>
+{% endblock formularionewsletter %} 
